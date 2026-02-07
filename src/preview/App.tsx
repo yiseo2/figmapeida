@@ -10,6 +10,8 @@ import { InputField } from '../components/InputField';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ContactUs } from '../pages/ContactUs';
+import { TextareaField } from '../components/TextareaField';
+import { FormContact } from '../components/FormContact';
 
 /* Simple SVG icons for demo */
 const StarIcon = () => (
@@ -436,6 +438,71 @@ export const App: React.FC = () => {
 
         <div className="demo-box" style={{ padding: 0, overflow: 'hidden' }}>
           <Footer />
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ===== TextareaField ===== */}
+      <section className="section">
+        <h2 className="section__title">Textarea Field</h2>
+        <p className="section__description">
+          멀티라인 텍스트 입력 &nbsp;|&nbsp; min-height 80px &nbsp;|&nbsp; state: Default / Error / Disabled
+        </p>
+
+        <div className="demo-box">
+          <div className="demo-box__label">Default</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <TextareaField label="Message" placeholder="Type your message..." />
+            <TextareaField label="Message" description="We will get back to you" placeholder="Type here..." />
+          </div>
+        </div>
+
+        <div className="demo-box">
+          <div className="demo-box__label">Error</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <TextareaField label="Message" state="error" placeholder="Type here..." error="This field is required" />
+            <TextareaField label="Message" state="error" defaultValue="Short" error="Minimum 20 characters" />
+          </div>
+        </div>
+
+        <div className="demo-box">
+          <div className="demo-box__label">Disabled</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <TextareaField label="Message" state="disabled" placeholder="Cannot edit" />
+            <TextareaField label="Message" state="disabled" defaultValue="Disabled value" />
+          </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ===== FormContact ===== */}
+      <section className="section">
+        <h2 className="section__title">Form Contact</h2>
+        <p className="section__description">
+          InputField + TextareaField + Button 조합 폼 컴포넌트 &nbsp;|&nbsp; Contact Us 페이지용
+        </p>
+
+        <div className="demo-box">
+          <div className="demo-box__label">기본 (Name + Surname + Email + Message)</div>
+          <FormContact
+            title="Contact Us"
+            description="Fill out the form below and we'll get back to you as soon as possible."
+            submitLabel="Send Message"
+            onSubmit={(data) => alert(JSON.stringify(data, null, 2))}
+          />
+        </div>
+
+        <div className="demo-box">
+          <div className="demo-box__label">Surname 제외</div>
+          <FormContact
+            title="Quick Contact"
+            description="Send us a quick message."
+            submitLabel="Submit"
+            showSurname={false}
+            onSubmit={(data) => alert(JSON.stringify(data, null, 2))}
+          />
         </div>
       </section>
     </div>
