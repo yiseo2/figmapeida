@@ -48,7 +48,7 @@
   font-family: var(--sds-typography-title-hero-font-family);
   font-weight: var(--sds-typography-title-hero-font-weight);
   font-size: var(--sds-typography-title-hero-size);
-  line-height: var(--sds-typography-title-hero-line-height);
+  line-height: 100px;
   letter-spacing: var(--sds-typography-title-hero-letter-spacing);
   font-style: normal;
   color: inherit;
