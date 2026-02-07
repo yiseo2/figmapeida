@@ -6,6 +6,9 @@ import { Button } from '../components/Button';
 import { ButtonDanger } from '../components/ButtonDanger';
 import { IconButton } from '../components/IconButton';
 import { ButtonGroup } from '../components/ButtonGroup';
+import { InputField } from '../components/InputField';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 /* Simple SVG icons for demo */
 const StarIcon = () => (
@@ -307,6 +310,69 @@ export const App: React.FC = () => {
               <Button variant="subtle" label="Cancel" />
             </ButtonGroup>
           </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ===== Input Field ===== */}
+      <section className="section">
+        <h2 className="section__title">Input Field</h2>
+        <p className="section__description">
+          state: Default / Error / Disabled &nbsp;|&nbsp; Label, Description, Error message 지원
+        </p>
+
+        <div className="demo-box">
+          <div className="demo-box__label">Default</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
+            <InputField label="Label" placeholder="Placeholder" />
+            <InputField label="Label" defaultValue="Value" />
+            <InputField label="Label" description="Description" placeholder="Placeholder" />
+          </div>
+        </div>
+
+        <div className="demo-box">
+          <div className="demo-box__label">Error</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <InputField label="Label" state="error" placeholder="Placeholder" error="Error message" />
+            <InputField label="Label" state="error" defaultValue="Value" error="Error message" />
+          </div>
+        </div>
+
+        <div className="demo-box">
+          <div className="demo-box__label">Disabled</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <InputField label="Label" state="disabled" placeholder="Placeholder" />
+            <InputField label="Label" state="disabled" defaultValue="Value" />
+          </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ===== Header ===== */}
+      <section className="section">
+        <h2 className="section__title">Header</h2>
+        <p className="section__description">
+          Desktop 네비게이션 헤더 &nbsp;|&nbsp; NavigationPill + Auth 버튼
+        </p>
+
+        <div className="demo-box" style={{ padding: 0, overflow: 'hidden' }}>
+          <Header />
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      {/* ===== Footer ===== */}
+      <section className="section">
+        <h2 className="section__title">Footer</h2>
+        <p className="section__description">
+          로고, 소셜 아이콘, 링크 컬럼 레이아웃
+        </p>
+
+        <div className="demo-box" style={{ padding: 0, overflow: 'hidden' }}>
+          <Footer />
         </div>
       </section>
     </div>

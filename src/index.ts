@@ -19,3 +19,12 @@ export type { IconButtonProps, IconButtonVariant, IconButtonSize } from './compo
 
 export { ButtonGroup } from './components/ButtonGroup';
 export type { ButtonGroupProps, ButtonGroupAlign } from './components/ButtonGroup';
+
+export { InputField } from './components/InputField';
+export type { InputFieldProps, InputFieldState } from './components/InputField';
+
+export { Header } from './components/Header';
+export type { HeaderProps, NavItem } from './components/Header';
+
+export { Footer } from './components/Footer';
+export type { FooterProps, FooterLinkColumn, SocialLink } from './components/Footer';
