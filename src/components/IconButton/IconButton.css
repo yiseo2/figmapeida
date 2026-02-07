@@ -1,0 +1,124 @@
+/* ===========================================
+ * IconButton Component Styles
+ * Circular icon-only button
+ * Variants: Primary, Neutral, Subtle
+ * States: Default, Hover, Disabled
+ * Sizes: Medium (44px), Small (36px)
+ * =========================================== */
+
+.sds-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--sds-typography-scale-06, 32px);
+  border-style: solid;
+  border-width: var(--sds-size-stroke-border);
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  padding: 0;
+}
+
+/* ---- Size: Medium (44x44) ---- */
+.sds-icon-button--medium {
+  width: 44px;
+  height: 44px;
+}
+
+.sds-icon-button--medium .sds-icon-button__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---- Size: Small (36x36) ---- */
+.sds-icon-button--small {
+  width: 36px;
+  height: 36px;
+}
+
+.sds-icon-button--small .sds-icon-button__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+ * Variant: Primary
+ * ======================================== */
+.sds-icon-button--primary {
+  background-color: var(--sds-color-background-brand-default);
+  border-color: var(--sds-color-border-brand-default);
+  color: var(--sds-color-icon-brand-on-brand);
+}
+
+.sds-icon-button--primary:hover:not(:disabled),
+.sds-icon-button--primary.sds-icon-button--hover {
+  background-color: var(--sds-color-background-brand-hover);
+  border-color: var(--sds-color-background-brand-hover);
+}
+
+.sds-icon-button--primary:disabled,
+.sds-icon-button--primary.sds-icon-button--disabled {
+  background-color: var(--sds-color-background-disabled-default);
+  border-color: var(--sds-color-border-disabled-default);
+  color: var(--sds-color-icon-disabled-on-disabled);
+  cursor: not-allowed;
+}
+
+/* ========================================
+ * Variant: Neutral
+ * ======================================== */
+.sds-icon-button--neutral {
+  background-color: var(--sds-color-background-neutral-tertiary);
+  border-color: var(--sds-color-border-neutral-secondary);
+  color: var(--sds-color-icon-default-default);
+}
+
+.sds-icon-button--neutral:hover:not(:disabled),
+.sds-icon-button--neutral.sds-icon-button--hover {
+  background-color: var(--sds-color-background-neutral-tertiary-hover);
+  border-color: var(--sds-color-border-neutral-default);
+}
+
+.sds-icon-button--neutral:disabled,
+.sds-icon-button--neutral.sds-icon-button--disabled {
+  background-color: var(--sds-color-background-disabled-default);
+  border-color: var(--sds-color-border-disabled-default);
+  color: var(--sds-color-icon-disabled-on-disabled);
+  cursor: not-allowed;
+}
+
+/* ========================================
+ * Variant: Subtle
+ * ======================================== */
+.sds-icon-button--subtle {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--sds-color-icon-default-default);
+}
+
+.sds-icon-button--subtle:hover:not(:disabled),
+.sds-icon-button--subtle.sds-icon-button--hover {
+  background-color: var(--sds-color-background-default-secondary);
+  border-color: var(--sds-color-border-default-default);
+}
+
+.sds-icon-button--subtle:disabled,
+.sds-icon-button--subtle.sds-icon-button--disabled {
+  color: var(--sds-color-icon-disabled-on-disabled);
+  cursor: not-allowed;
+}
+
+/* ---- Icon container ---- */
+.sds-icon-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sds-icon-button__icon svg {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,141 @@
+/* ===========================================
+ * Button Component Styles
+ * Variants: Primary, Neutral, Subtle
+ * States: Default, Hover, Disabled
+ * Sizes: Medium, Small
+ * =========================================== */
+
+.sds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200);
+  overflow: hidden;
+  border-radius: var(--sds-size-radius-200);
+  border-style: solid;
+  border-width: var(--sds-size-stroke-border);
+  font-family: var(--sds-typography-body-font-family);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* ---- Size: Medium ---- */
+.sds-button--medium {
+  padding: var(--sds-size-space-300);
+  font-size: var(--sds-typography-body-size-medium);
+}
+
+/* ---- Size: Small ---- */
+.sds-button--small {
+  padding: var(--sds-size-space-200);
+  font-size: var(--sds-typography-body-size-small, 14px);
+}
+
+/* ========================================
+ * Variant: Primary
+ * ======================================== */
+.sds-button--primary {
+  background-color: var(--sds-color-background-brand-default);
+  border-color: var(--sds-color-border-brand-default);
+  color: var(--sds-color-text-brand-on-brand);
+}
+
+.sds-button--primary:hover:not(:disabled),
+.sds-button--primary.sds-button--hover {
+  background-color: var(--sds-color-background-brand-hover);
+  border-color: var(--sds-color-background-brand-hover);
+}
+
+.sds-button--primary:disabled,
+.sds-button--primary.sds-button--disabled {
+  background-color: var(--sds-color-background-disabled-default);
+  border-color: var(--sds-color-border-disabled-default);
+  color: var(--sds-color-text-disabled-on-disabled);
+  cursor: not-allowed;
+}
+
+/* ========================================
+ * Variant: Neutral
+ * ======================================== */
+.sds-button--neutral {
+  background-color: var(--sds-color-background-neutral-tertiary);
+  border-color: var(--sds-color-border-neutral-secondary);
+  color: var(--sds-color-text-default-default);
+}
+
+.sds-button--neutral:hover:not(:disabled),
+.sds-button--neutral.sds-button--hover {
+  background-color: var(--sds-color-background-neutral-tertiary-hover);
+  border-color: var(--sds-color-border-neutral-default);
+}
+
+.sds-button--neutral:disabled,
+.sds-button--neutral.sds-button--disabled {
+  background-color: var(--sds-color-background-disabled-default);
+  border-color: var(--sds-color-border-disabled-default);
+  color: var(--sds-color-text-disabled-on-disabled);
+  cursor: not-allowed;
+}
+
+/* ========================================
+ * Variant: Subtle
+ * ======================================== */
+.sds-button--subtle {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--sds-color-text-neutral-default);
+}
+
+.sds-button--subtle:hover:not(:disabled),
+.sds-button--subtle.sds-button--hover {
+  background-color: var(--sds-color-background-default-secondary);
+  border-color: var(--sds-color-border-default-default);
+}
+
+.sds-button--subtle:disabled,
+.sds-button--subtle.sds-button--disabled {
+  color: var(--sds-color-text-disabled-default);
+  cursor: not-allowed;
+}
+
+/* ---- Icon slots ---- */
+.sds-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.sds-button__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Icon color inheritance */
+.sds-button--primary .sds-button__icon {
+  color: var(--sds-color-icon-brand-on-brand);
+}
+
+.sds-button--neutral .sds-button__icon {
+  color: var(--sds-color-icon-default-default);
+}
+
+.sds-button--subtle .sds-button__icon {
+  color: var(--sds-color-icon-default-default);
+}
+
+.sds-button--primary:disabled .sds-button__icon,
+.sds-button--primary.sds-button--disabled .sds-button__icon,
+.sds-button--neutral:disabled .sds-button__icon,
+.sds-button--neutral.sds-button--disabled .sds-button__icon,
+.sds-button--subtle:disabled .sds-button__icon,
+.sds-button--subtle.sds-button--disabled .sds-button__icon {
+  color: var(--sds-color-icon-disabled-on-disabled);
+}

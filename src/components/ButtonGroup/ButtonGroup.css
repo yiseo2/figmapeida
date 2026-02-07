@@ -1,0 +1,47 @@
+/* ===========================================
+ * ButtonGroup Component Styles
+ * Align: Justify, Start, End, Center, Stack
+ * =========================================== */
+
+.sds-button-group {
+  display: flex;
+  gap: var(--sds-size-space-400);
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---- Align: Justify ---- */
+.sds-button-group--justify {
+  justify-content: stretch;
+}
+
+.sds-button-group--justify > * {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* ---- Align: Start ---- */
+.sds-button-group--start {
+  justify-content: flex-start;
+}
+
+/* ---- Align: End ---- */
+.sds-button-group--end {
+  justify-content: flex-end;
+}
+
+/* ---- Align: Center ---- */
+.sds-button-group--center {
+  justify-content: center;
+}
+
+/* ---- Align: Stack (vertical) ---- */
+.sds-button-group--stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sds-button-group--stack > * {
+  width: 100%;
+}

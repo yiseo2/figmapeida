@@ -1,0 +1,110 @@
+/* ===========================================
+ * ButtonDanger Component Styles
+ * Variants: Primary, Subtle
+ * States: Default, Hover, Disabled
+ * Sizes: Medium, Small
+ * Keywords: action, negative, destructive
+ * =========================================== */
+
+.sds-button-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200);
+  overflow: hidden;
+  border-radius: var(--sds-size-radius-200);
+  border-style: solid;
+  border-width: var(--sds-size-stroke-border);
+  font-family: var(--sds-typography-body-font-family);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* ---- Size: Medium ---- */
+.sds-button-danger--medium {
+  padding: var(--sds-size-space-300);
+  font-size: var(--sds-typography-body-size-medium);
+}
+
+/* ---- Size: Small ---- */
+.sds-button-danger--small {
+  padding: var(--sds-size-space-200);
+  font-size: var(--sds-typography-body-size-small, 14px);
+}
+
+/* ========================================
+ * Variant: Primary
+ * ======================================== */
+.sds-button-danger--primary {
+  background-color: var(--sds-color-background-danger-default);
+  border-color: var(--sds-color-border-danger-secondary);
+  color: var(--sds-color-text-danger-on-danger);
+}
+
+.sds-button-danger--primary:hover:not(:disabled),
+.sds-button-danger--primary.sds-button-danger--hover {
+  background-color: var(--sds-color-background-danger-hover);
+  border-color: var(--sds-color-border-danger-default);
+}
+
+.sds-button-danger--primary:disabled,
+.sds-button-danger--primary.sds-button-danger--disabled {
+  background-color: var(--sds-color-background-disabled-default);
+  border-color: var(--sds-color-border-disabled-default);
+  color: var(--sds-color-text-disabled-on-disabled);
+  cursor: not-allowed;
+}
+
+/* ========================================
+ * Variant: Subtle
+ * ======================================== */
+.sds-button-danger--subtle {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--sds-color-text-danger-default);
+}
+
+.sds-button-danger--subtle:hover:not(:disabled),
+.sds-button-danger--subtle.sds-button-danger--hover {
+  background-color: var(--sds-color-background-danger-tertiary-hover);
+  border-color: var(--sds-color-border-danger-secondary);
+}
+
+.sds-button-danger--subtle:disabled,
+.sds-button-danger--subtle.sds-button-danger--disabled {
+  color: var(--sds-color-text-disabled-default);
+  cursor: not-allowed;
+}
+
+/* ---- Icon slots ---- */
+.sds-button-danger__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.sds-button-danger__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sds-button-danger--primary .sds-button-danger__icon {
+  color: var(--sds-color-text-danger-on-danger);
+}
+
+.sds-button-danger--subtle .sds-button-danger__icon {
+  color: var(--sds-color-text-danger-default);
+}
+
+.sds-button-danger:disabled .sds-button-danger__icon,
+.sds-button-danger.sds-button-danger--disabled .sds-button-danger__icon {
+  color: var(--sds-color-icon-disabled-on-disabled);
+}
