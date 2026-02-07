@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../tokens/variables.css';
 import './preview.css';
 
@@ -9,6 +9,7 @@ import { ButtonGroup } from '../components/ButtonGroup';
 import { InputField } from '../components/InputField';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { ContactUs } from '../pages/ContactUs';
 
 /* Simple SVG icons for demo */
 const StarIcon = () => (
@@ -31,8 +32,70 @@ const SettingsIcon = () => (
 );
 
 export const App: React.FC = () => {
+  const [page, setPage] = useState<'components' | 'contact'>('contact');
+
+  /* Contact Us 페이지 */
+  if (page === 'contact') {
+    return (
+      <div>
+        <div style={{
+          position: 'fixed',
+          bottom: 24,
+          right: 24,
+          zIndex: 9999,
+          display: 'flex',
+          gap: 8,
+        }}>
+          <button
+            onClick={() => setPage('components')}
+            style={{
+              padding: '10px 20px',
+              borderRadius: 8,
+              border: '1px solid #d9d9d9',
+              background: '#fff',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: 14,
+              cursor: 'pointer',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+            }}
+          >
+            Components
+          </button>
+        </div>
+        <ContactUs />
+      </div>
+    );
+  }
+
   return (
     <div className="preview">
+      {/* Page switcher */}
+      <div style={{
+        position: 'fixed',
+        bottom: 24,
+        right: 24,
+        zIndex: 9999,
+        display: 'flex',
+        gap: 8,
+      }}>
+        <button
+          onClick={() => setPage('contact')}
+          style={{
+            padding: '10px 20px',
+            borderRadius: 8,
+            border: '1px solid #d9d9d9',
+            background: '#2c2c2c',
+            color: '#f5f5f5',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: 14,
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+          }}
+        >
+          Contact Us
+        </button>
+      </div>
+
       {/* Header */}
       <header className="preview__header">
         <h1 className="preview__title">Simple Design System</h1>

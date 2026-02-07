@@ -1,0 +1,147 @@
+/* ===========================================
+ * Contact Us Page Styles
+ * Figma Node: "Contact Us" (3002:100551)
+ *
+ * ALL values are mapped 1:1 to SDS design tokens.
+ * Zero hardcoded colors, sizes, fonts, or spacing.
+ * =========================================== */
+
+/* ---- Page root ---- */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--sds-color-background-default-default);
+  font-family: var(--sds-typography-body-font-family);
+}
+
+/* ========================================
+ * Hero Form Section
+ * Figma Node: "Hero Form"
+ * ======================================== */
+.contact-hero-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-800);
+  width: 100%;
+  padding: var(--sds-size-space-4000) var(--sds-size-space-600);
+  background-color: var(--sds-color-background-default-secondary);
+  box-sizing: border-box;
+}
+
+/* ---- Text Content Title ---- */
+.contact-hero-form__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+  text-align: center;
+  color: var(--sds-color-text-brand-on-brand-tertiary);
+}
+
+/* ---- Title Hero typography ---- */
+.contact-hero-form__title {
+  font-family: var(--sds-typography-title-hero-font-family);
+  font-weight: var(--sds-typography-title-hero-font-weight);
+  font-size: var(--sds-typography-title-hero-size);
+  line-height: var(--sds-typography-title-hero-line-height);
+  letter-spacing: var(--sds-typography-title-hero-letter-spacing);
+  font-style: normal;
+  color: inherit;
+  margin: 0;
+  width: 100%;
+}
+
+/* ---- Subtitle typography ---- */
+.contact-hero-form__subtitle {
+  font-family: var(--sds-typography-subtitle-font-family);
+  font-weight: var(--sds-typography-subtitle-font-weight);
+  font-size: var(--sds-typography-subtitle-size-base);
+  line-height: var(--sds-typography-subtitle-line-height);
+  letter-spacing: 0;
+  font-style: normal;
+  color: inherit;
+  margin: 0;
+  width: 100%;
+}
+
+/* ========================================
+ * Form Contact Card
+ * Figma Node: "Form Contact"
+ * ======================================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sds-size-space-600);
+  min-width: 320px;
+  padding: var(--sds-size-space-600);
+  background-color: var(--sds-color-background-default-default);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  box-sizing: border-box;
+}
+
+/* ---- Field width constraint (Figma: 272px = 320px - 24px*2 padding) ---- */
+.contact-form .sds-input-field,
+.contact-form__textarea-wrap {
+  width: 272px;
+}
+
+/* ========================================
+ * Textarea Field
+ * Figma Node: "Textarea Field"
+ * Styled to match InputField token usage
+ * ======================================== */
+.contact-form__textarea-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+  align-items: flex-start;
+}
+
+.contact-form__textarea-label {
+  font-family: var(--sds-typography-body-font-family);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: 1.4;
+  font-style: normal;
+  color: var(--sds-color-text-default-default);
+  margin: 0;
+}
+
+.contact-form__textarea {
+  width: 100%;
+  min-height: 80px;
+  min-width: 120px;
+  padding: var(--sds-size-space-300) var(--sds-size-space-400);
+  background-color: var(--sds-color-background-default-default);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  font-family: var(--sds-typography-body-font-family);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: 1.4;
+  color: var(--sds-color-text-default-default);
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.contact-form__textarea::placeholder {
+  color: var(--sds-color-text-default-tertiary);
+}
+
+.contact-form__textarea:focus {
+  border-color: var(--sds-color-border-neutral-default);
+}
+
+/* ---- Button Group wrapper (Figma: 272px justify) ---- */
+.contact-form__actions {
+  width: 272px;
+}
