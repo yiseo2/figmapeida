@@ -28,3 +28,9 @@ export type { HeaderProps, NavItem } from './components/Header';
 
 export { Footer } from './components/Footer';
 export type { FooterProps, FooterLinkColumn, SocialLink } from './components/Footer';
+
+export { TextareaField } from './components/TextareaField';
+export type { TextareaFieldProps, TextareaFieldState } from './components/TextareaField';
+
+export { FormContact } from './components/FormContact';
+export type { FormContactProps, FormContactField } from './components/FormContact';

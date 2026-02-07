@@ -102,6 +102,12 @@
   --sds-typography-scale-06: 32px;
   --sds-typography-scale-07: 40px;
 
+  /* Title & Subtitle */
+  --sds-typography-title-page-size-base: 48px;
+  --sds-typography-title-page-font-weight: 700;
+  --sds-typography-subtitle-size-base: 32px;
+  --sds-typography-subtitle-font-weight: 400;
+
   /* ========================================
    * Typography - Title Hero
    * ======================================== */
