@@ -47,7 +47,7 @@
 .contact-hero-form__title {
   font-family: var(--sds-typography-title-hero-font-family);
   font-weight: var(--sds-typography-title-hero-font-weight);
-  font-size: var(--sds-typography-title-hero-size);
+  font-size: 90px;
   line-height: 100px;
   letter-spacing: var(--sds-typography-title-hero-letter-spacing);
   font-style: normal;
