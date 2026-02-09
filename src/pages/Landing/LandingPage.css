@@ -1,0 +1,261 @@
+/* ===========================================
+ * 교육 커리큘럼 랜딩페이지 Styles
+ * Figma Node: "교육 커리큘럼 랜딩페이지" (46:916)
+ *
+ * ALL values mapped to SDS design tokens.
+ * Heading → scale-07 + body-font-weight-strong
+ * Subheading → body-size-medium + subtitle-font-weight
+ * Zero hardcoded colors, fonts, or spacing.
+ * =========================================== */
+
+/* ---- Page root ---- */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--sds-color-background-default-default);
+  font-family: var(--sds-typography-body-font-family);
+}
+
+/* ========================================
+ * Hero Image Section
+ * Figma Node: "Hero Image" (46:1607)
+ *
+ * TextContentTitle (center) + ButtonGroup (center)
+ * 배경: default-secondary (#f5f5f5)
+ * ======================================== */
+.landing-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-800);
+  width: 100%;
+  padding: var(--sds-size-space-4000) var(--sds-size-space-600);
+  background-color: var(--sds-color-background-default-secondary);
+  box-sizing: border-box;
+}
+
+.landing-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+  text-align: center;
+  color: var(--sds-color-text-brand-on-brand-tertiary);
+}
+
+/* Title Hero 토큰 사용, letter-spacing만 피그마 값(-3) 근사 */
+.landing-hero__title {
+  font-family: var(--sds-typography-title-hero-font-family);
+  font-weight: var(--sds-typography-title-hero-font-weight);
+  font-size: var(--sds-typography-title-hero-size);
+  line-height: var(--sds-typography-title-hero-line-height);
+  letter-spacing: var(--sds-typography-title-hero-letter-spacing);
+  color: inherit;
+  margin: 0;
+}
+
+/* Subtitle 토큰 사용 */
+.landing-hero__subtitle {
+  font-family: var(--sds-typography-subtitle-font-family);
+  font-weight: var(--sds-typography-subtitle-font-weight);
+  font-size: var(--sds-typography-subtitle-size-base);
+  line-height: var(--sds-typography-subtitle-line-height);
+  color: inherit;
+  margin: 0;
+}
+
+/* ========================================
+ * Panel Image Double
+ * Figma Node: "Panel Image Double" (46:1566)
+ *
+ * Section padding 1600 (64px) + 2개 이미지 half 배치
+ * ======================================== */
+.landing-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--sds-size-space-1600) var(--sds-size-space-600);
+  background-color: var(--sds-color-background-default-default);
+  box-sizing: border-box;
+}
+
+.landing-panel__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sds-size-space-600);
+  max-width: var(--sds-responsive-device-width);
+  width: 100%;
+}
+
+/* Image Placeholder — neutral-tertiary (#E3E3E3) */
+.landing-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background-color: var(--sds-color-background-neutral-tertiary);
+  border-radius: var(--sds-size-radius-200);
+  color: var(--sds-color-text-default-tertiary);
+}
+
+.landing-image-placeholder__svg {
+  width: var(--sds-size-icon-large);
+  height: var(--sds-size-icon-large);
+}
+
+/* ========================================
+ * Card Grid Icon Section
+ * Figma Node: "Card Grid Icon" (46:1279)
+ *
+ * Section padding 1200 → space-1600 (64px, 가장 근접한 토큰)
+ * TextContentHeading + 6 Cards (horizontal, wrap)
+ * ======================================== */
+.landing-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sds-size-space-1600);
+  width: 100%;
+  padding: var(--sds-size-space-1600) var(--sds-size-space-600);
+  background-color: var(--sds-color-background-default-default);
+  box-sizing: border-box;
+}
+
+/* ---- TextContentHeading (Heading + Subheading) ---- */
+.landing-cards__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sds-size-space-200);
+  max-width: var(--sds-responsive-device-width);
+  width: 100%;
+}
+
+/* Heading → scale-07(40px) + body-font-weight-strong(600, Semi Bold 근사) */
+.landing-cards__heading {
+  font-family: var(--sds-typography-title-hero-font-family);
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  font-size: var(--sds-typography-scale-07);
+  line-height: var(--sds-typography-subtitle-line-height);
+  letter-spacing: var(--sds-typography-title-hero-letter-spacing);
+  color: var(--sds-color-text-default-default);
+  margin: 0;
+}
+
+/* Subheading → body-size-medium(16px) + subtitle-font-weight(400) */
+.landing-cards__subheading {
+  font-family: var(--sds-typography-subtitle-font-family);
+  font-weight: var(--sds-typography-subtitle-font-weight);
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: var(--sds-typography-subtitle-line-height);
+  color: var(--sds-color-text-default-secondary);
+  margin: 0;
+}
+
+/* ---- Card Grid (3열, wrap) ---- */
+.landing-cards__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sds-size-space-600);
+  max-width: var(--sds-responsive-device-width);
+  width: 100%;
+}
+
+/* ---- Card (horizontal: icon left + body right) ----
+ * Figma Card: direction="horizontal", fill width
+ * 카드 고정 width 440px → flex 기반으로 3열 자동 배분
+ */
+.landing-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--sds-size-space-400);
+  flex: 1 1 calc(33.333% - var(--sds-size-space-600));
+  min-width: 280px;
+  padding: var(--sds-size-space-600);
+  background-color: var(--sds-color-background-default-default);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  box-sizing: border-box;
+}
+
+.landing-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--sds-size-icon-large);
+  height: var(--sds-size-icon-large);
+  color: var(--sds-color-icon-default-default);
+}
+
+.landing-card__icon svg {
+  width: var(--sds-size-icon-medium);
+  height: var(--sds-size-icon-medium);
+}
+
+.landing-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+  flex: 1;
+}
+
+/* Card title → Body Strong 토큰 */
+.landing-card__title {
+  font-family: var(--sds-typography-body-font-family);
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: 1.4;
+  color: var(--sds-color-text-default-default);
+  margin: 0;
+}
+
+/* Card description → Body Base 토큰 */
+.landing-card__description {
+  font-family: var(--sds-typography-body-font-family);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: 1.4;
+  color: var(--sds-color-text-default-secondary);
+  margin: 0;
+}
+
+/* ========================================
+ * Responsive
+ * ======================================== */
+@media (max-width: 768px) {
+  .landing-hero__title {
+    font-size: var(--sds-typography-scale-07);
+  }
+
+  .landing-hero__subtitle {
+    font-size: var(--sds-typography-body-size-medium);
+  }
+
+  .landing-hero {
+    padding: var(--sds-size-space-1600) var(--sds-size-space-400);
+  }
+
+  .landing-panel {
+    padding: var(--sds-size-space-800) var(--sds-size-space-400);
+  }
+
+  .landing-panel__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-cards {
+    padding: var(--sds-size-space-800) var(--sds-size-space-400);
+  }
+
+  .landing-card {
+    flex: 1 1 100%;
+  }
+}
