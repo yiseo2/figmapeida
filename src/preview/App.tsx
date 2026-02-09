@@ -10,6 +10,7 @@ import { InputField } from '../components/InputField';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ContactUs } from '../pages/ContactUs';
+import { LandingPage } from '../pages/Landing';
 
 /* Simple SVG icons for demo */
 const StarIcon = () => (
@@ -32,36 +33,58 @@ const SettingsIcon = () => (
 );
 
 export const App: React.FC = () => {
-  const [page, setPage] = useState<'components' | 'contact'>('contact');
+  const [page, setPage] = useState<'components' | 'contact' | 'landing'>('landing');
+
+  /* Switcher bar styles */
+  const switcherStyle: React.CSSProperties = {
+    position: 'fixed',
+    bottom: 24,
+    right: 24,
+    zIndex: 9999,
+    display: 'flex',
+    gap: 8,
+  };
+  const btnBase: React.CSSProperties = {
+    padding: '10px 20px',
+    borderRadius: 8,
+    border: '1px solid #d9d9d9',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: 14,
+    cursor: 'pointer',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+  };
+  const btnLight: React.CSSProperties = { ...btnBase, background: '#fff', color: '#1e1e1e' };
+  const btnDark: React.CSSProperties = { ...btnBase, background: '#2c2c2c', color: '#f5f5f5' };
+
+  const Switcher = ({ current }: { current: string }) => (
+    <div style={switcherStyle}>
+      {current !== 'landing' && (
+        <button onClick={() => setPage('landing')} style={btnDark}>Landing</button>
+      )}
+      {current !== 'contact' && (
+        <button onClick={() => setPage('contact')} style={btnLight}>Contact</button>
+      )}
+      {current !== 'components' && (
+        <button onClick={() => setPage('components')} style={btnLight}>Components</button>
+      )}
+    </div>
+  );
+
+  /* Landing page (교육 커리큘럼) */
+  if (page === 'landing') {
+    return (
+      <div>
+        <Switcher current="landing" />
+        <LandingPage />
+      </div>
+    );
+  }
 
   /* Contact Us 페이지 */
   if (page === 'contact') {
     return (
       <div>
-        <div style={{
-          position: 'fixed',
-          bottom: 24,
-          right: 24,
-          zIndex: 9999,
-          display: 'flex',
-          gap: 8,
-        }}>
-          <button
-            onClick={() => setPage('components')}
-            style={{
-              padding: '10px 20px',
-              borderRadius: 8,
-              border: '1px solid #d9d9d9',
-              background: '#fff',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 14,
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-            }}
-          >
-            Components
-          </button>
-        </div>
+        <Switcher current="contact" />
         <ContactUs />
       </div>
     );
@@ -70,31 +93,7 @@ export const App: React.FC = () => {
   return (
     <div className="preview">
       {/* Page switcher */}
-      <div style={{
-        position: 'fixed',
-        bottom: 24,
-        right: 24,
-        zIndex: 9999,
-        display: 'flex',
-        gap: 8,
-      }}>
-        <button
-          onClick={() => setPage('contact')}
-          style={{
-            padding: '10px 20px',
-            borderRadius: 8,
-            border: '1px solid #d9d9d9',
-            background: '#2c2c2c',
-            color: '#f5f5f5',
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 14,
-            cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-          }}
-        >
-          Contact Us
-        </button>
-      </div>
+      <Switcher current="components" />
 
       {/* Header */}
       <header className="preview__header">
